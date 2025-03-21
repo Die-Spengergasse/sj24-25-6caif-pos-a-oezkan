@@ -46,7 +46,7 @@ namespace SPG_Fachtheorie.Aufgabe3.Controllers
     [FromQuery] DateTime? dateFrom
 )
         {
-            IQueryable<Payment> query = _db.Payments;
+            var query = _db.Payments.AsQueryable();
 
             if (cashDesk.HasValue)
             {
